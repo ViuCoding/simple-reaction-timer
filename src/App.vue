@@ -23,10 +23,9 @@ export default {
   },
   methods: {
     start() {
-      this.delay = 2000 + Math.random() * 5000; // This will generate a number between 2000ms and 7000ms
-      this.isPlaying = true;
-      this.showResults = false;
-      console.log(this.delay);
+      this.delay = 2000 + Math.random() * 5000; // This will generate a number between 2000ms and 7000ms and it will make the box appear randomly
+      this.isPlaying = true; // This turns to true so we show the Block component
+      this.showResults = false; // When we start we don't want to see the previous results hence = false
     },
 
     endGame(reactionTime) {

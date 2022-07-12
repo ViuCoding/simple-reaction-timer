@@ -13,11 +13,10 @@ export default {
     };
   },
   mounted() {
-    console.log("Component has been mounted!");
     setTimeout(() => {
       this.showBlock = true;
       this.startTimer(); // We start the timer as soon as the Reaction Button appears (which is when showBlock becomes true)
-    }, this.delay);
+    }, this.delay); // Delay has been passed as a prop from the parent component
   },
 
   updated() {
@@ -25,19 +24,14 @@ export default {
     console.log("Component has been updated!");
   },
 
-  unmounted() {
-    console.log("Unmounted");
-  },
-
   methods: {
     startTimer() {
       this.timer = setInterval(() => {
         this.reactionTime += 10;
-      }, 10);
+      }, 10); // the setInterval function is store in a variable (this.timer) so we can stop the timer later using clearInterval + the name of the timer variable
     },
     stopTimer() {
       clearInterval(this.timer);
-      console.log(this.reactionTime);
       this.$emit("end", this.reactionTime);
     },
   },
